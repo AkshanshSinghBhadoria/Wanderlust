@@ -16,6 +16,8 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
 
+const port = process.env.PORT;
+
 const listingRouter = require("./routes/listing.js")
 const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
@@ -104,6 +106,6 @@ app.use((err, req, res, next) => {
     // res.status(statusCode).send(message);
 });
 
-app.listen(8080, () => {
-    console.log("server is listening to port 8080");
+app.listen(port, () => {
+    console.log(`server is listening to port ${port}`);
 });
